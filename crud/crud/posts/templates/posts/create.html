@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>글을 작성하겠습니다.</h1>
+    <div class="container"></div>
+    <form action="{% url 'posts:create' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Sumbit">
+    </form>
+{% endblock content %}
+
+    
+    
+    #title과 contentcreate로 포스트 방식으로
